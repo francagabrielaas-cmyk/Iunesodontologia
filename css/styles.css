@@ -20,12 +20,6 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   /* Hero: fundo em imagens/ */
   --img-hero: url("../imagens/consultorio.jpeg");
-  --img-servico-1: url("../imagens/servico-1.jpg");
-  --img-servico-2: url("../imagens/servico-2.jpg");
-  --img-servico-3: url("../imagens/servico-3.jpg");
-  --img-servico-4: url("../imagens/servico-4.jpg");
-  --img-servico-5: url("../imagens/servico-5.jpg");
-  --img-servico-6: url("../imagens/servico-6.jpg");
   --img-equipe: url("../imagens/equipe.jpeg");
   --img-contato: url("../imagens/contato.jpg");
 }
@@ -516,33 +510,26 @@ a:hover {
 }
 
 .card-service__img {
+  position: relative;
   height: 180px;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+  background: var(--lilac-soft);
 }
 
-.card-service__img--1 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-1);
+.card-service__img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45));
+  pointer-events: none;
+  z-index: 1;
 }
 
-.card-service__img--2 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-2);
-}
-
-.card-service__img--3 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-3);
-}
-
-.card-service__img--4 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-4);
-}
-
-.card-service__img--5 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-5);
-}
-
-.card-service__img--6 {
-  background-image: linear-gradient(to bottom, transparent 40%, rgba(60, 5, 99, 0.45)), var(--img-servico-6);
+.card-service__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-service__body {
