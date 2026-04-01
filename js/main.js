@@ -3,8 +3,6 @@
 
   var header = document.getElementById("nav");
   var yearEl = document.getElementById("year");
-  var form = document.getElementById("formContato");
-  var feedback = document.getElementById("formFeedback");
 
   if (typeof AOS !== "undefined") {
     AOS.init({
@@ -39,23 +37,5 @@
       }
     });
   });
-
-  if (form && feedback) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      feedback.textContent = "";
-      feedback.classList.remove("is-ok", "is-err");
-
-      if (!form.checkValidity()) {
-        feedback.textContent = "Preencha todos os campos corretamente.";
-        feedback.classList.add("is-err");
-        return;
-      }
-
-      feedback.textContent = "Mensagem recebida! Em breve entraremos em contato.";
-      feedback.classList.add("is-ok");
-      form.reset();
-    });
-  }
 
 })();
